@@ -31,10 +31,17 @@ Additionally, you will need [Ghostscript](https://www.ghostscript.com/download/g
     node app_v2.js
     ```
 3. **Combine PDF Files:** After downloading, you can combine the generated PDF files using Ghostscript. Run the following command:
-
-    ```bash
+    - **Linux:**
+        ```bash
         gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=combined.pdf *.pdf
-    ```
+        ```
+
+    - **Windows:**
+        ```bash
+        gswin64c -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=combined.pdf *.pdf
+        ```
+
+Make sure to run the command in the directory containing your PDF files.
 
 ## Notes
 
