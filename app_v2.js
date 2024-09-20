@@ -7,7 +7,7 @@ const path = require('path');
     const urls = fs.readFileSync('uri.txt', 'utf-8').trim().split('\n');
 
     const browser = await puppeteer.launch();
-    var i = 541;
+    var i = 1;
     for (const url of urls) {
         const page = await browser.newPage();
 
@@ -16,16 +16,16 @@ const path = require('path');
             await page.goto(url);
 
             // Set screen size.
-                await page.setViewport({width: 1080, height: 1024});
+            await page.setViewport({width: 1080, height: 1024});
             // Wait for the button to load and click it
-            await page.waitForSelector('a.btn.btn-primary.reveal-solution');
-            await page.click('a.btn.btn-primary.reveal-solution');
+            // await page.waitForSelector('a.btn.btn-primary.reveal-solution');
+            // await page.click('a.btn.btn-primary.reveal-solution');
 
             // Wait for the suggested answer to appear
             // await page.waitForTimeout(2000); // Adjust as necessary
 
             // Simulate pressing the Enter key
-            await page.keyboard.press('Enter');
+            // await page.keyboard.press('Enter');
 
             // Generate PDF and save to specified path
             const fileName = url.split('/').slice(-2, -1)[0]; // Extract the last part of the URL for filename
